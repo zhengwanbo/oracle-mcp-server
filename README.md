@@ -192,12 +192,24 @@ For both options:
 - The `TARGET_SCHEMA` is optional, it will default to the user's schema
 - The `CACHE_DIR` is optional, defaulting to `.cache` within the MCP server root folder
 
+#### Option 3：Useing Cherry Studio
+run by stdio
+![img.png](img.png)
+
+run by sse
+![img_1.png](img_1.png)
+
+
 ### Starting the Server locally
 
 To run the MCP server directly:
 
 ```bash
 uv run main.py
+
+or
+
+python main.py --transport=sse
 ```
 
 For development and testing:
@@ -307,6 +319,29 @@ Example:
 ```
 What tables are related to the ORDERS table?
 ```
+#### `read_query` 
+执行SELECT查询
+示例：
+```
+查询订单表记录？
+```
+
+#### `exec_ddl_sql` 
+执行CREATE/ALTER/DROP操作
+示例：
+```
+创建一个学生表，包括姓名，性别，出生日期，班级，入学时间？
+```
+
+#### `exec_dml_sql` 
+执行INSERT/UPDATE/DELETE操作
+示例：
+```
+为学生表插入100条数据
+```
+
+#### `exec_pro_sql` 
+执行PL/SQL代码块
 
 ## Architecture
 
