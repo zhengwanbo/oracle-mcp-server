@@ -1,0 +1,16 @@
+services:
+  oracle:
+    container_name: oracle_free
+    image: container-registry.oracle.com/database/free:23.6.0.0-arm64
+    environment:
+      - ORACLE_SID=${ORACLE_SID}
+      - ORACLE_PDB=${ORACLE_PDB}
+      - ORACLE_PWD=${ORACLE_PWD}
+      - ORACLE_CHARACTERSET=${ORACLE_CHARACTERSET}
+    ports:
+      - "1521:1521"
+    volumes:
+      - ./init:/opt/oracle/scripts/startup
+
+volumes:
+  oracle_data:

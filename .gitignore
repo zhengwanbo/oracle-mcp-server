@@ -1,0 +1,10 @@
+debug/
+target/
+__pycache__/
+hudet/
+cv/
+layout_app.py
+api/flask_session
+*.pyc
+**/__pycache__/*.pyc
+*.bak

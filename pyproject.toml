@@ -1,0 +1,25 @@
+[project]
+name = "oracle-mcp-server"
+version = "0.1.3"
+description = "MCP server for Oracle database schema context retrieval"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp>=1.2.1",
+    "oracledb>=2.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "mypy",
+    "ruff"
+]
+
+[tool.ruff]
+select = ["E", "F", "I"]
+line-length = 88
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
